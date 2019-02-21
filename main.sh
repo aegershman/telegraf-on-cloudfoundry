@@ -7,6 +7,11 @@ dl | download-telegraf-binary)
     tar -xvf telegraf-*.tar.gz
     rm -rf telegraf-*.tar.gz
     ;;
+
+cups | create-user-provided-service)
+    cf cups user-provided -p '{"telegraf_ping_target": "amazon.com"}'
+    ;;
+
 *)
     :
     ;;

@@ -1,10 +1,23 @@
 ---
 applications:
-- name: telegraf-binary
+- name: telegraf-binary-env-in-manifest
   instances: 1
   memory: 64MB
   no-route: true
   health-check-type: process
-  command: ./telegraf/telegraf --config=telegraf/telegraf.conf
+  command: ./telegraf/telegraf --config=telegraf/telegraf-env-in-manifest.conf
   buildpacks:
   - binary_buildpack
+  env:
+    PING_TARGET_URL: "google.com"
+
+- name: telegraf-binary-env-in-user-provided-service
+  instances: 1
+  memory: 64MB
+  no-route: true
+  health-check-type: process
+  command: ./telegraf/telegraf --config=telegraf/telegraf-env-in-user-provided-service.conf
+  buildpacks:
+  - binary_buildpack
+  services:
+  - user-provided
