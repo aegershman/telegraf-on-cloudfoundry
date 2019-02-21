@@ -1,0 +1,10 @@
+---
+applications:
+- name: telegraf-binary
+  instances: 1
+  memory: 64MB
+  no-route: true
+  health-check-type: process
+  command: ./telegraf/telegraf --config=telegraf/telegraf.conf
+  buildpacks:
+  - binary_buildpack
