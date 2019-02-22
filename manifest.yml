@@ -11,6 +11,7 @@ applications:
   env:
     PING_TARGET_URL: "google.com"
 
+# This won't work without pre-processing to expand out VCAP_SERVICES
 - name: telegraf-binary-env-in-user-provided-service
   instances: 1
   memory: 64MB
