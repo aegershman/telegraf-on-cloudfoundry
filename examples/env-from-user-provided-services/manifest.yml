@@ -1,0 +1,13 @@
+---
+applications:
+# This won't work without pre-processing to expand out VCAP_SERVICES
+- name: telegraf-env-from-user-provided-services
+  instances: 1
+  memory: 64MB
+  no-route: true
+  health-check-type: process
+  command: ./telegraf --config=telegraf.conf
+  buildpacks:
+  - binary_buildpack
+  services:
+  - user-provided
