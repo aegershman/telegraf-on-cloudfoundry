@@ -8,3 +8,5 @@ Can I run telegraf as just a regular ol' application and pass config via env var
 
 - [telegraf environment variables](http://docs.influxdata.com/telegraf/v1.9/administration/configuration/#environment-variables)
 - [github issue about hiding passwords in telegraf config](https://github.com/influxdata/telegraf/issues/3124)
+- [limited use of the telegraf buildpack](https://github.com/Comcast/telegraf-buildpack/blob/master/bin/config-global-tags.sh#L50-L60), cool and interesting but also seems like a very specific telegraf use-case
+- [vcap_squash](https://github.com/cloudfoundry-community/vcap-squash)
