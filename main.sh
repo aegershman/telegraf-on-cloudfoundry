@@ -11,6 +11,7 @@ dtb | download-telegraf-binary)
 daea | delete-all-example-apps)
     cf delete telegraf-env-from-manifest-only -r -f
     cf delete telegraf-env-from-user-provided-services -r -f
+    cf delete telegraf-env-mysql-service-binding -r -f
     ;;
 
 # For use in `env-from-user-provided-services`

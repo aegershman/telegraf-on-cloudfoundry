@@ -1,0 +1,12 @@
+---
+applications:
+- name: telegraf-env-mysql-service-binding
+  instances: 1
+  memory: 64MB
+  no-route: true
+  health-check-type: process
+  command: ./telegraf --config=telegraf.conf
+  buildpacks:
+  - binary_buildpack
+  services:
+  - mysql
