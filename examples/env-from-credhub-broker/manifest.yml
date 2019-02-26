@@ -1,0 +1,12 @@
+---
+applications:
+- name: telegraf-env-from-credhub-broker
+  instances: 1
+  memory: 64MB
+  no-route: true
+  health-check-type: process
+  command: ./telegraf --config=telegraf.conf
+  buildpacks:
+  - binary_buildpack
+  services:
+  - credhub
