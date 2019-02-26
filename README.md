@@ -2,6 +2,8 @@
 
 Can I run telegraf as just a regular ol' application and pass config via env vars?
 
+`tl;dr`, yes you can, and the magic is [`vcap_squash`](https://github.com/cloudfoundry-community/vcap-squash)
+
 [As per this github issue](https://github.com/influxdata/telegraf/issues/5469), we won't be able to parse the `VCAP_SERVICES` without running a script first. So `telegraf-env-in-user-provided-service.confg` won't work without first pre-processing the `*.conf` to expand out variable references.
 
 ## examples
