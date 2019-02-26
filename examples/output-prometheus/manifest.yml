@@ -1,0 +1,12 @@
+---
+applications:
+- name: telegraf-output-prometheus
+  instances: 1
+  memory: 64MB
+  random-route: true
+  health-check-type: process
+  command: ./telegraf --config=telegraf.conf
+  buildpacks:
+  - binary_buildpack
+  env:
+    PING_TARGET_URL: "google.com"
